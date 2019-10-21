@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/mensageminicial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bem vindo " />
+
+
+    <TextView
+        android:id="@+id/textoname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuário" />
+
+    <EditText
+        android:id="@+id/varname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Usuário" />
+
+    <TextView
+        android:id="@+id/textopass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Senha" />
+
+    <EditText
+        android:id="@+id/varpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login" />
+
+    <ImageView
+        android:id="@+id/imagemLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!--app:srcCompat="@drawable/das" />-->
+</LinearLayout>

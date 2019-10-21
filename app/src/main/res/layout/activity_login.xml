@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".LoginActivity">
+
+  
+    <ImageView
+        android:id="@+id/iv_login_logo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/das" />
+
+    <TextView
+        android:id="@+id/tv_login_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="Faça seu Login" />
+
+    <TextView
+        android:id="@+id/tv_login_usuario_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuário" />
+
+    <EditText
+        android:id="@+id/et_login_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tv_login_senha_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Senha" />
+
+    <EditText
+        android:id="@+id/et_login_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/bt_login_entrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Login" />
+
+
+</LinearLayout>
