@@ -4,15 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.toolbar.*
 
-class ConfiguracoesActivity : AppCompatActivity() {
+class CadastroProdutoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_configuracoes)
-
+        setContentView(R.layout.activity_produto)
 
         setSupportActionBar(app_toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+    }
 }

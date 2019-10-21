@@ -5,7 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.toolbar.*
 
 
-class CadastroActivity : AppCompatActivity() {
+class CadastroUsuarioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

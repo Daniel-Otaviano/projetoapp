@@ -1,5 +1,7 @@
 <resources>
 
+    <!-- Base application theme. -->
+    <!-- Para usar uma toolbar, foi preciso mudar o parent tema. Verificar o Manifest -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

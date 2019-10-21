@@ -8,7 +8,11 @@
     android:padding="30dp"
     tools:context=".LoginActivity">
 
-  
+    <!--
+         - Antenção os ids dos componentes estão no formato <iniciais do nome do componente>_<identificador da função do componente>
+         - Padding e Margin, dão um espaço entre os componentes da tela
+    -->
+
     <ImageView
         android:id="@+id/iv_login_logo"
         android:layout_width="match_parent"
