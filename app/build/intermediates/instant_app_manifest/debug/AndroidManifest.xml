@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.appfaculdade"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="29" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="App OPE"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.appfaculdade.CadastroFornecedorActivity"
+            android:label="Cadastro Fornecedor"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+        <!-- Parent Activity é a atividade qua vai ser chamanda quando clicamos em voltar -->
+        <activity
+            android:name="com.example.appfaculdade.CadastroProdutoActivity"
+            android:label="Cadastro Produto"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+        <activity
+            android:name="com.example.appfaculdade.ConfiguracoesActivity"
+            android:label="Configurações"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+        <activity
+            android:name="com.example.appfaculdade.CadastroUsuarioActivity"
+            android:label="Cadastro Usuário"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+        <activity android:name="com.example.appfaculdade.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.appfaculdade.TelainicialActivity" />
+        <activity android:name="com.example.appfaculdade.DebugActivity" />
+        <activity android:name="com.example.appfaculdade.MainActivity" />
+    </application>
+
+</manifest>

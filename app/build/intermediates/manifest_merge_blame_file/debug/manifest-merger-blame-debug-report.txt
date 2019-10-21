@@ -1,0 +1,88 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.appfaculdade"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:6:5-41:19
+12        android:allowBackup="true"
+12-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:7:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.0.2] C:\Users\Vdev\.gradle\caches\transforms-2\files-2.1\4c11edde0e8743f1e03fb17544729eec\core-1.0.2\AndroidManifest.xml:22:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:8:9-43
+16        android:label="App OPE"
+16-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:9:9-32
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:10:9-54
+18        android:supportsRtl="true"
+18-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:11:9-35
+19        android:theme="@style/AppTheme" >
+19-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:12:9-40
+20        <activity
+20-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:14:9-17:58
+21            android:name="com.example.appfaculdade.CadastroFornecedorActivity"
+21-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:15:13-55
+22            android:label="Cadastro Fornecedor"
+22-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:16:13-48
+23            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+23-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:17:13-55
+24        <!-- Parent Activity é a atividade qua vai ser chamanda quando clicamos em voltar -->
+25        <activity
+25-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:19:9-22:58
+26            android:name="com.example.appfaculdade.CadastroProdutoActivity"
+26-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:20:13-52
+27            android:label="Cadastro Produto"
+27-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:21:13-45
+28            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+28-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:22:13-55
+29        <activity
+29-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:23:9-26:58
+30            android:name="com.example.appfaculdade.ConfiguracoesActivity"
+30-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:24:13-50
+31            android:label="Configurações"
+31-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:25:13-42
+32            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+32-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:26:13-55
+33        <activity
+33-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:27:9-30:58
+34            android:name="com.example.appfaculdade.CadastroUsuarioActivity"
+34-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:28:13-52
+35            android:label="Cadastro Usuário"
+35-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:29:13-45
+36            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+36-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:30:13-55
+37        <activity android:name="com.example.appfaculdade.LoginActivity" >
+37-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:31:9-37:20
+37-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:31:19-48
+38            <intent-filter>
+38-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:32:13-36:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:33:17-69
+39-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:33:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:35:17-77
+41-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:35:27-74
+42            </intent-filter>
+43        </activity>
+44        <activity android:name="com.example.appfaculdade.TelainicialActivity" />
+44-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:38:9-57
+44-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:38:19-54
+45        <activity android:name="com.example.appfaculdade.DebugActivity" />
+45-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:39:9-51
+45-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:39:19-48
+46        <activity android:name="com.example.appfaculdade.MainActivity" />
+46-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:40:9-50
+46-->C:\Users\Vdev\Downloads\ac4\app\src\main\AndroidManifest.xml:40:19-47
+47    </application>
+48
+49</manifest>
