@@ -11,20 +11,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-
         <activity
-            android:name=".ProdutoActivity"
+            android:name=".CadastroFornecedorActivity"
+            android:label="Cadastro Fornecedor"
             android:parentActivityName=".MainActivity" />
-
+        <!-- Parent Activity é a atividade qua vai ser chamanda quando clicamos em voltar -->
+        <activity
+            android:name=".CadastroProdutoActivity"
+            android:label="Cadastro Produto"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ConfiguracoesActivity"
+            android:label="Configurações"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".CadastroActivity"
+            android:name=".CadastroUsuarioActivity"
+            android:label="Cadastro Usuário"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".LoginActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
