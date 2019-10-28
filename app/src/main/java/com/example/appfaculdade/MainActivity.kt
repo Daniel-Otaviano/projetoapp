@@ -1,6 +1,8 @@
 package com.example.appfaculdade
 
 
+import android.app.Notification
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +13,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.core.app.NotificationCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -59,6 +62,7 @@ class MainActivity : DebugActivity() {
                     startActivity(Intent(this, ConfiguracoesActivity::class.java))
                 }
                 R.id.action_sair -> {
+                    LoginWS.sair(this)
                     startActivity(Intent(this, LoginActivity::class.java))
                     finish() // destroi essa activity e volta pra anteiror
                 }
@@ -67,10 +71,8 @@ class MainActivity : DebugActivity() {
             true
         }
 
-
         navmenu.getHeaderView(0).nav_header_title.text = getSharedPreferences("LOGIN", Context.MODE_PRIVATE).getString("username", "")
-
-        // AC06
+        // AC07
         val context = this
         Thread({
             //verificar ws
@@ -85,7 +87,19 @@ class MainActivity : DebugActivity() {
             }
         }).start()
 
+    }
 
+    override fun onResume() {
+        super.onResume()
+        val mBuilder = NotificationCompat.Builder(this, "notid")
+            .setSmallIcon(android.R.drawable.ic_delete) // notification icon
+            .setContentTitle("Projeto APp") // title for notification
+            .setContentText("Bem Vindo ao Sistema") // message for notification
+            .setAutoCancel(true)
+            .setPriority(Notification.PRIORITY_MAX)// clear notification after click
+
+        val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
+        mNotificationManager?.notify(1, mBuilder.build())
     }
 
 
@@ -126,7 +140,20 @@ class MainActivity : DebugActivity() {
                 pb_atualizando_pesquisa.visibility = View.VISIBLE // fica visivel
 
                 Handler().postDelayed(Runnable {
-                    pb_atualizando_pesquisa.visibility = View.INVISIBLE
+                    // AC07
+                    val context = this
+                    Thread({
+                        //verificar ws
+                        val listaDeProdutos = ProdutoWS.getProdutos(context)
+                        runOnUiThread {
+                            produtoAdapater = ProdutoAdapater(this@MainActivity, listaDeProdutos)
+                            // exibir os produtos no recyclerview
+                            rv_lista_produtos?.apply {
+                                layoutManager = LinearLayoutManager(this@MainActivity)
+                                adapter = produtoAdapater
+                            }
+                        }
+                    }).start()
                 }, 10000) // 10 segundos
             }
         }

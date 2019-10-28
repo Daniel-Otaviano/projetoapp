@@ -20,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
             val usuario = et_login_usuario.text.toString()
             val senha = et_login_senha.text.toString()
+            val manterLogado = cb_manter_logado.isChecked
 
             val context = this
             Thread({
@@ -27,7 +28,9 @@ class LoginActivity : AppCompatActivity() {
                 runOnUiThread {
                     // consegui logar
                     if (usuarioLogado != null) {
-                        LoginWS.materUsuario(usuarioLogado, context)
+                        if (manterLogado) {
+                            LoginWS.permanecerLogado(usuarioLogado, manterLogado, context)
+                        }
                         val intent = Intent(context, MainActivity::class.java)
                         // chama a outra tela
                         startActivity(intent)
@@ -41,6 +44,11 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        if (LoginWS.isLogado(this)) {
+            val intent = Intent(this, MainActivity::class.java)
+            // chama a outra tela
+            startActivity(intent)
+        }
     }
 
 }

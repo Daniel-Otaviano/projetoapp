@@ -36,10 +36,23 @@ object LoginWS {
         }
     }
 
-
-    fun materUsuario(usuario: Usuario, context: Context) {
+    // salva logado ac07
+    fun permanecerLogado(usuario: Usuario, logado: Boolean, context: Context) {
         val sessao = context.getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
-        sessao.edit().putString("username", usuario.user).putString("password", usuario.password).apply()
+        sessao.edit().putBoolean("logado", logado).putString("username", usuario.user).putString("password", usuario.password).apply()
+    }
+
+
+    // apaga logado ac07
+    fun sair(context: Context) {
+        val sessao = context.getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
+        sessao.edit().putBoolean("logado", false).putString("username", "").putString("password","").apply()
+    }
+
+    fun isLogado(context: Context): Boolean {
+        val sessao = context.getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
+        val logado = sessao.getBoolean("logado", false)
+        return logado
     }
 
     fun isInternetDisponivel(context: Context): Boolean {
@@ -48,17 +61,5 @@ object LoginWS {
         return redes.map { conexao.getNetworkInfo(it) }.any { it?.state == NetworkInfo.State.CONNECTED }
     }
 
-
-    fun save(produto: Produto): String {
-        val client = OkHttpClient()
-        // val MIMEType = MediaType.get("application/json; charset=utf-8")
-        val requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), produto.toJson())
-        val request = Request.Builder().url(host).post(requestBody).build()
-        val response = client.newCall(request).execute()
-        response.body()?.let {
-            return it.toString()
-        }
-        return ""
-    }
 
 }

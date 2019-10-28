@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.protudo_item.view.*
 
 // Para usar no recycler view
-class ProdutoAdapater(private val context: Context, var listaDeProdutos: ArrayList<Produto>) : RecyclerView.Adapter<ProdutoAdapater.ProdutoItemViewHolder>() {
+class ProdutoAdapater(private val context: Context, var listaDeProdutos: MutableList<Produto>) : RecyclerView.Adapter<ProdutoAdapater.ProdutoItemViewHolder>() {
 
 
     // cria a tela do item
