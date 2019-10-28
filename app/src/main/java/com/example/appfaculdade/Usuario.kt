@@ -1,3 +1,9 @@
 package com.example.appfaculdade
 
-class Usuario(var nome: String, var usuario: String, var senha: String) {}
+class Usuario(var id: Int, var user: String, var password: String) {
+    var nome: String
+
+    init {
+        nome = "Aluno"
+    }
+}

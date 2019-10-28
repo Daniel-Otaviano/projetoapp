@@ -25,8 +25,9 @@ class ProdutoAdapater(private val context: Context, var listaDeProdutos: ArrayLi
     override fun onBindViewHolder(holder: ProdutoItemViewHolder, position: Int) {
         // pegar um produto da lista
         val produto = listaDeProdutos.get(position)
-        holder.view.tv_produto_nome.text = "Nome: ${produto.nome}"
-        holder.view.tv_produto_quantidade.text = "Quantidade: ${produto.quantidade}"
+        holder.view.tv_produto_nome.text = "Nome: ${produto.produto}"
+        holder.view.tv_produto_cor.text = "Cor: ${produto.cor}"
+        holder.view.tv_produto_tam.text = "Tamanho: ${produto.tamanho}"
     }
 
 

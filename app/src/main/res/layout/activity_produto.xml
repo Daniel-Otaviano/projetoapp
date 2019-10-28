@@ -17,6 +17,7 @@
         android:padding="20dp"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,18 +29,29 @@
             android:layout_height="wrap_content"
             android:inputType="text" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Cor do Produto" />
+
+        <EditText
+            android:id="@+id/et_produto_cor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Quantidade de Produtos" />
+            android:text="Tamanho do Produto" />
 
         <EditText
-            android:id="@+id/et_produto_quantidade"
+            android:id="@+id/et_produto_tamanho"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="number" />
 
         <Button
             android:id="@+id/bt_salvar_produto"

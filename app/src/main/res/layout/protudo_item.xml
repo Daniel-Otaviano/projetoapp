@@ -10,8 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:padding="16dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/iv_protudo_logo"
@@ -32,13 +32,22 @@
             tools:text="Nome do Produto" />
 
         <TextView
-            android:id="@+id/tv_produto_quantidade"
+            android:id="@+id/tv_produto_cor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@id/iv_protudo_logo"
             app:layout_constraintTop_toBottomOf="@id/tv_produto_nome"
-            tools:text="Qtd: 100" />
+            tools:text="Cor: 100" />
+
+        <TextView
+            android:id="@+id/tv_produto_tam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/iv_protudo_logo"
+            app:layout_constraintTop_toBottomOf="@id/tv_produto_cor"
+            tools:text="Tamanho: 100" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

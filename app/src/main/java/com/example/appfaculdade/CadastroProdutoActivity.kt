@@ -12,24 +12,26 @@ class CadastroProdutoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_produto)
 
-        //adicionar o actionbar /Toolbar. app_toolbar é o componente la da do toolbar.xml(ele pode ser adicionado em qualquer layout, usando o include(veja activity_produto.xml)
         setSupportActionBar(app_toolbar)
 
-        // exibe a setinha de voltar na action bar. Para fazer ela funcionar, voce pode adicionar um parentActivity em CadastroProdutoActivity la no AndroidManifest.xml
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
 
         // salvar novo produto
         bt_salvar_produto.setOnClickListener {
 
             val nome = et_produto_nome.text.toString()
-            val quantidade = et_produto_quantidade.text.toString()
+            val cor = et_produto_cor.text.toString()
+            val tamanho = et_produto_tamanho.text.toString()
+            // criar um metodo post no service
 
-            SimuladorWS.cadastrar(Produto(nome, quantidade.toInt()))
-
-            startActivity(Intent(this@CadastroProdutoActivity, MainActivity::class.java))
+            Thread({
+                //verificar ws
+                ProdutoWS.save(Produto(cor, 0, nome, tamanho.toInt()))
+                runOnUiThread {
+                    startActivity(Intent(this@CadastroProdutoActivity, MainActivity::class.java))
+                }
+            }).start()
 
         }
-
     }
 }

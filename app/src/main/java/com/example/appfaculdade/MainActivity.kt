@@ -1,6 +1,7 @@
 package com.example.appfaculdade
 
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -15,10 +16,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header.view.*
 import kotlinx.android.synthetic.main.toolbar.*
+import kotlin.concurrent.thread
 
 
 class MainActivity : DebugActivity() {
 
+    private var produtoAdapater: ProdutoAdapater? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +59,6 @@ class MainActivity : DebugActivity() {
                     startActivity(Intent(this, ConfiguracoesActivity::class.java))
                 }
                 R.id.action_sair -> {
-                    SimuladorWS.usuarioLogado = null
                     startActivity(Intent(this, LoginActivity::class.java))
                     finish() // destroi essa activity e volta pra anteiror
                 }
@@ -66,17 +68,23 @@ class MainActivity : DebugActivity() {
         }
 
 
-        navmenu.getHeaderView(0).nav_header_title.text = SimuladorWS.usuarioLogado?.nome
+        navmenu.getHeaderView(0).nav_header_title.text = getSharedPreferences("LOGIN", Context.MODE_PRIVATE).getString("username", "")
 
+        // AC06
+        val context = this
+        Thread({
+            //verificar ws
+            val listaDeProdutos = ProdutoWS.getProdutos(context)
+            runOnUiThread {
+                produtoAdapater = ProdutoAdapater(this@MainActivity, listaDeProdutos)
+                // exibir os produtos no recyclerview
+                rv_lista_produtos?.apply {
+                    layoutManager = LinearLayoutManager(this@MainActivity)
+                    adapter = produtoAdapater
+                }
+            }
+        }).start()
 
-        // simular lista de produtos
-        val listaDeProdutos = SimuladorWS.listarProdutos()
-
-        // exibir os produtos no recyclerview
-        rv_lista_produtos?.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = ProdutoAdapater(this@MainActivity, SimuladorWS.produtos)
-        }
 
     }
 
