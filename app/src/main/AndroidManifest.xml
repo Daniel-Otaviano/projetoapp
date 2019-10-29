@@ -11,6 +11,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="App OPE"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:networkSecurityConfig="@xml/net_cofig"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
