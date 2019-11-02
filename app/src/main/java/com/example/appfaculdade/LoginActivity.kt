@@ -18,11 +18,12 @@ class LoginActivity : AppCompatActivity() {
         // Quando o botaão da tela de login for clicado
         bt_login_entrar.setOnClickListener {
 
+            val context = this
+
             val usuario = et_login_usuario.text.toString()
             val senha = et_login_senha.text.toString()
             val manterLogado = cb_manter_logado.isChecked
 
-            val context = this
             Thread({
                 val usuarioLogado = LoginWS.getUsuario(context, usuario, senha)
                 runOnUiThread {

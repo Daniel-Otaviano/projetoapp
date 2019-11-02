@@ -9,7 +9,6 @@ import java.net.URL
 import okhttp3.*
 
 
-// simular um webservice
 object ProdutoWS {
 
     val host = "http://lucaskurata.pythonanywhere.com/produtos"
