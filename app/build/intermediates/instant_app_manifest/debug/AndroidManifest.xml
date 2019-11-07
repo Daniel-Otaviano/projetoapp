@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.appfaculdade"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="App OPE"
+        android:networkSecurityConfig="@xml/net_cofig"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.appfaculdade.ListarFornecedores"
+            android:label="Lista de Fornecedores"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+        <activity
+            android:name="com.example.appfaculdade.CadastroFornecedorActivity"
+            android:label="Cadastro de Fornecedor"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" /> <!-- Parent Activity é a atividade qua vai ser chamanda quando clicamos em voltar -->
+        <activity
+            android:name="com.example.appfaculdade.CadastroProdutoActivity"
+            android:label="Cadastro de Produto"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+        <activity
+            android:name="com.example.appfaculdade.ConfiguracoesActivity"
+            android:label="Configurações"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+        <activity
+            android:name="com.example.appfaculdade.CadastroUsuarioActivity"
+            android:label="Cadastro de Usuário"
+            android:parentActivityName="com.example.appfaculdade.MainActivity" />
+        <activity android:name="com.example.appfaculdade.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.appfaculdade.TelainicialActivity" />
+        <activity android:name="com.example.appfaculdade.DebugActivity" />
+        <activity android:name="com.example.appfaculdade.MainActivity" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false" />
+    </application>
+
+</manifest>

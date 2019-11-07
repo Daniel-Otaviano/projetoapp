@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_adicionar_usuario"
+        android:icon="@drawable/ic_action_add_user"
+        android:title="Cadastrar Usuário" />
+
+
+    <item
+        android:id="@+id/action_adicionar_produto"
+        android:icon="@drawable/ic_action_add_produto"
+        android:title="Cadastrar Produto" />
+
+
+    <item
+        android:id="@+id/action_adicionar_fornecedor"
+        android:icon="@drawable/ic_action_add_fornecedor"
+        android:title="Cadastrar Fornecedor" />
+
+    <item
+        android:id="@+id/action_listar_fornecedor"
+        android:icon="@drawable/ic_list_fornecedores"
+        android:title="Listar Fornecedor" />
+
+    <item
+        android:id="@+id/action_config"
+        android:icon="@drawable/ic_configuracoes_white"
+        android:title="Configurações" />
+
+    <item
+        android:id="@+id/action_sair"
+        android:icon="@drawable/ic_action_sair"
+        android:title="Sair" />
+
+</menu>

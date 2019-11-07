@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastroFornecedorActivity">
+
+    <!-- Incluir o Toolbar na pagina -->
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_fornecedor"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher_round" />
+
+
+        <Button
+            android:id="@+id/bt_tirarfoto_fornecedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="tirar foto" />
+
+
+        <EditText
+            android:id="@+id/et_fornecedor_codigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Codigo"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/et_fornecedor_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Nome"
+            android:inputType="text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/et_fornecedor_cidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cidade"
+            android:inputType="text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_fornecedor_uf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Estado"
+            android:inputType="text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_fornecedor_endereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Endereço ex: rua tal, bairo, nº"
+            android:inputType="text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bt_salvar_fornecedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="salvar fornecedor" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

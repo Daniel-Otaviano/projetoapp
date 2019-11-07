@@ -3,28 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.appfaculdade">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="App OPE"
+        android:networkSecurityConfig="@xml/net_cofig"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-
         <activity
-            android:name=".ProdutoActivity"
+            android:name=".ListarFornecedores"
+            android:label="Lista de Fornecedores"
             android:parentActivityName=".MainActivity" />
-
+        <activity
+            android:name=".CadastroFornecedorActivity"
+            android:label="Cadastro de Fornecedor"
+            android:parentActivityName=".MainActivity" /> <!-- Parent Activity é a atividade qua vai ser chamanda quando clicamos em voltar -->
+        <activity
+            android:name=".CadastroProdutoActivity"
+            android:label="Cadastro de Produto"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ConfiguracoesActivity"
+            android:label="Configurações"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".CadastroActivity"
+            android:name=".CadastroUsuarioActivity"
+            android:label="Cadastro de Usuário"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".LoginActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
